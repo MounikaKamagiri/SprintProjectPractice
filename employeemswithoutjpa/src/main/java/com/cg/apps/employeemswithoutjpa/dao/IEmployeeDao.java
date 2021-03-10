@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IEmployeeDao {
 
-    void add (Employee student);
+    void add (Employee employee);
 
     Employee findById(int id);
 

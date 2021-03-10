@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/students")
+@RequestMapping("/employees")
 @RestController
 public class EmployeeRestController {
 
@@ -21,9 +21,6 @@ public class EmployeeRestController {
     @Autowired
     private EmployeeUtil util;
 
-    /**
-     * /students/byid/2
-     */
     @GetMapping(value = "/byid/{id}")
     public EmployeeDetails fetchEmployee(@PathVariable("id") Integer employeeId) {
         Employee employee = service.findById(employeeId);
@@ -31,20 +28,13 @@ public class EmployeeRestController {
         return details;
     }
 
-
-    /**
-     * /students
-     */
     @GetMapping
     public List<EmployeeDetails> allEmployees() {
         List<Employee> list = service.findAll();
-        List<EmployeeDetails>desired=util.toDetailsList(list);
-        return desired;
+        List<EmployeeDetails>desiredvalue=util.toDetailsList(list);
+        return desiredvalue;
     }
 
-    /**
-     * in post request ,data is sent as part of request body
-     */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/add")
     public String addEmployee(@RequestBody CreateEmployeeRequest requestData) {

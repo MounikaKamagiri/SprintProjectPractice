@@ -1,5 +1,4 @@
 package com.cg.apps.employeemswithoutjpa;
-//package com.cg.apps.employeemswithoutjpa;
 
 import com.cg.apps.employeemswithoutjpa.ui.*;
 import org.springframework.boot.SpringApplication;

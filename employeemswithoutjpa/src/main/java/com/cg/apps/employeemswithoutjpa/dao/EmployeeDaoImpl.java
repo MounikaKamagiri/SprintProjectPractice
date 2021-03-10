@@ -39,7 +39,7 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 	}
 
 	@Override
-	public Employee update(Employee  employee){
+	public Employee update(Employee employee){
 		store.put(employee.getId(),employee);
 		return employee;
 	}

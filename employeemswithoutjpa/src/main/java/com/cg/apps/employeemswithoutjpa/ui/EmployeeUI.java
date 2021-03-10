@@ -22,23 +22,22 @@ public class EmployeeUI {
         try {
             Employee mounika = service.addEmployee("mounika", 70);
             display(mounika);
-            Employee surya = service.addEmployee("surya", 75);
-            display(surya);
+            Employee madhuri = service.addEmployee("madhuri", 75);
+            display(madhuri);
 
             Employee rohit = service.addEmployee("rohit", 80);
             display(rohit);
 
             Employee fetchedEmployee = service.findById(mounika.getId());
-            System.out.println("**displaying fetched employee for id=" + mounika.getId() + " ****");
+            System.out.println("displaying fetched employee for id=" + mounika.getId());
             display(fetchedEmployee);
 
-            System.out.println("**displaying all employees***");
+            System.out.println("displaying all employees");
             List<Employee> list = service.findAll();
             displayAll(list);
         }catch(InvalidIdException e){
             System.out.println(e.getMessage());
-            //e.printStackTrace();
-        }
+         }
         catch(InvalidScoreException e){
             System.out.println(e.getMessage());
            // e.printStackTrace();

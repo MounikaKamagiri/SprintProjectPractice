@@ -63,9 +63,6 @@ public class Employee{
 		 }
 		 Employee that=(Employee)obj;
 		return this.id==that.id;
-	}
-	
-	
-	
+	}	
 	
 }
